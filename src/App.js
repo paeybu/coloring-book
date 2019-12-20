@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import './App.css'
+import Rabbit from './components/Rabbit'
+import WoodDuck from './components/WoodDuck'
+
+import Nav from './components/Nav'
+import Home from './components/Home'
 
 function App() {
+  const [color, setColor] = useState('#fff')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="App">
+        <Nav />
+        <Route exact path="/" component={Home} />
+        <Route
+          path="/rabbit"
+          render={props => (
+            <Rabbit {...props} color={color} setColor={setColor} />
+          )}
+        />
+        <Route
+          path="/woodduck"
+          render={props => (
+            <WoodDuck {...props} color={color} setColor={setColor} />
+          )}
+        />
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
