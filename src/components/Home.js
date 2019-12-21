@@ -9,15 +9,15 @@ const Home = () => {
       <h1>Coloring Books</h1>
       <ul className="books">
         <li>
-          <h4>
+          <h2>
             <Link to="/rabbit">Rabbit</Link>
-          </h4>
+          </h2>
           <img src={Rabbit} className="thumbnail" />
         </li>
         <li>
-          <h4>
+          <h2>
             <Link to="/woodduck">WoodDuck</Link>
-          </h4>
+          </h2>
           <img src={WoodDuck} className="thumbnail" />
         </li>
       </ul>

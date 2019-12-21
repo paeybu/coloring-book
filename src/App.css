@@ -28,4 +28,11 @@ ul {
 
 .books {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.books li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
